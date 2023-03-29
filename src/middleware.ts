@@ -7,7 +7,7 @@ export default withClerkMiddleware((req: NextRequest) => {
   return NextResponse.next();
 });
 
-// Stop Middleware running on static files and public folder
+// Stop Middleware running on static file s and public folder
 export const config = {
   matcher: [
     /*
