@@ -6,7 +6,7 @@ import {
   publicProcedure,
 } from " /server/api/trpc";
 import clerkClient, { User } from "@clerk/clerk-sdk-node";
-import { TRPCClientError } from "@trpc/client";
+// import { TRPCClientError } from "@trpc/client";
 import { TRPCError } from "@trpc/server";
 
 const filterUserForClient = (user: User) => {
@@ -17,16 +17,16 @@ const filterUserForClient = (user: User) => {
   };
 };
 
-import { Ratelimit } from "@upstash/ratelimit"; // for deno: see above
-import { Redis } from "@upstash/redis";
+// import { Ratelimit } from "@upstash/ratelimit"; // for deno: see above
+// import { Redis } from "@upstash/redis";
 
 // Create a new ratelimiter, that allows 10 requests per 10 seconds
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(10, "10 s"),
-  analytics: true,
-  prefix: "@upstash/ratelimit",
-});
+// const ratelimit = new Ratelimit({
+//   redis: Redis.fromEnv(),
+//   limiter: Ratelimit.slidingWindow(10, "10 s"),
+//   analytics: true,
+//   prefix: "@upstash/ratelimit",
+// });
 
 export const postsRouter = createTRPCRouter({
   getAll: publicProcedure.query(async ({ ctx }) => {
