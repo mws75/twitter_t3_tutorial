@@ -9,7 +9,7 @@ import { api, RouterOutputs } from " /utils/api";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 
 import { useState } from "react";
-import { LoadingPage, LoadingSpinner } from " /components/LoadingSpinner";
+import { LoadingPage, LoadingSpinner } from " /components/loadingspinner";
 import { toast } from "react-hot-toast";
 import { PageLayout } from " /components/layouts";
 import { PostView } from " /components/postview";

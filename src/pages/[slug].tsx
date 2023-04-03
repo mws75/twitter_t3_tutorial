@@ -58,7 +58,7 @@ import { createProxySSGHelpers } from "@trpc/react-query/ssg";
 import { appRouter } from " /server/api/root";
 import { prisma } from " /server/db";
 import superjson from "superjson";
-import { LoadingPage } from " /components/LoadingSpinner";
+import { LoadingPage } from " /components/loadingspinner";
 import { PostView } from " /components/postview";
 
 export const getStaticProps: GetStaticProps = async (context) => {
