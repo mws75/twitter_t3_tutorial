@@ -9,16 +9,18 @@ import clerkClient, { User } from "@clerk/clerk-sdk-node";
 // import { TRPCClientError } from "@trpc/client";
 import { TRPCError } from "@trpc/server";
 
-const filterUserForClient = (user: User) => {
-  return {
-    id: user.id,
-    username: user.username,
-    profileImageUrl: user.profileImageUrl,
-  };
-};
+// const filterUserForClient = (user: User) => {
+//   return {
+//     id: user.id,
+//     username: user.username,
+//     profileImageUrl: user.profileImageUrl,
+//   };
+// };
 
 import { Ratelimit } from "@upstash/ratelimit"; // for deno: see above
 import { Redis } from "@upstash/redis";
+
+import { filterUserForClient } from " /server/helpers/filterUserForClient";
 
 // Create a new ratelimiter, that allows 3 requests per 1 minute
 const ratelimit = new Ratelimit({
